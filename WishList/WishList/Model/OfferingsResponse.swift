@@ -33,6 +33,24 @@ struct AttractionResponse: Codable {
 }
 
 extension AttractionResponse {
+    func makeAttraction() -> Attraction {
+        Attraction(
+            id: UUID(uuidString: id) ?? UUID(),
+            name: name,
+            type: attractionType(),
+            description: description(),
+            location: location ?? "Amsterdam, Netherlands",
+            imageURL: image,
+            rating: starsRating ?? 0.0,
+            price: Double(price) ?? 0.0,
+            priceCurrency: currency(),
+            exhibitionStartDate: startDate,
+            exhibitionEndDate: endDate
+        )
+    }
+}
+
+private extension AttractionResponse {
     func attractionType() -> AttractionType {
         switch type.uppercased() {
         case "EXHIBITION": .exhibition
@@ -42,11 +60,32 @@ extension AttractionResponse {
     }
     
     func currency() -> Currency {
-        switch priceCurrencyCode {
+        switch priceCurrencyCode.uppercased() {
         case "EUR": .eur
         case "USD": .usd
         case "GBP": .gbp
         default: .eur
         }
+    }
+    
+    func description() -> String {
+        if type == "EXHIBITION", let loc = location, let start = startDate, let end = endDate {
+            return "Special exhibition at \(loc). Running from \(formatDate(start)) to \(formatDate(end))."
+        } else if type == "VENUE", let rating = starsRating {
+            return "Very interesting attraction with a \(String(format: "%.1f", rating)) star rating."
+        } else {
+            return "Amazing attraction called \(name)."
+        }
+    }
+    
+    func formatDate(_ dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = "MMM d, yyyy"
+            return formatter.string(from: date)
+        }
+        return dateString
     }
 }

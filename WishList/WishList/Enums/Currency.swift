@@ -11,4 +11,5 @@ enum Currency: String {
     case eur = "€"
     case usd = "$"
     case gbp = "£"
+    // more can be added, just left like this to keep it simple. It could also depend on the market country and show always the country's currency.
 }
