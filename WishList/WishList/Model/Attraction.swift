@@ -41,9 +41,9 @@ struct Attraction {
         
         switch priceCurrency {
         case .eur:
-            return "\(String(format: "%.2f", price)) \(priceCurrency) "
+            return "\(String(format: "%.2f", price)) \(priceCurrency.rawValue) "
         case .usd, .gbp:
-            return "\(priceCurrency) \(String(format: "%.2f", price))"
+            return "\(priceCurrency.rawValue) \(String(format: "%.2f", price))"
         }
     }
 }
