@@ -1,5 +1,5 @@
 //
-//  WishlistManager.swift
+//  WishListManager.swift
 //  WishList
 //
 //  Created by Jessica Jesus on 15/02/2026.
@@ -9,11 +9,12 @@ import Foundation
 
 @Observable
 class WishListManager {
-    private(set) var wishlistItems: Set<UUID> = []
+    private(set) var wishlistItems: Set<UUID>
     
     private let userDefaultsKey = "wishlistItems"
     
-    init() {
+    init(wishlistItems: Set<UUID> = []) {
+        self.wishlistItems = wishlistItems
         loadWishlist()
     }
     

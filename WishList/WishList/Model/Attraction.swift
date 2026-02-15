@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Attraction {
+struct Attraction: Identifiable {
     let id: UUID
     let name: String
     let type: AttractionType
@@ -20,7 +20,7 @@ struct Attraction {
     let exhibitionStartDate: String?
     let exhibitionEndDate: String?
     
-    init(id: UUID = UUID(), name: String, type: AttractionType, description: String, location: String?, imageURL: String, rating: Double, price: Double = 0.0, priceCurrency: Currency = .eur, exhibitionStartDate: String? = nil, exhibitionEndDate: String? = nil) {
+    init(id: UUID = UUID(), name: String, type: AttractionType, description: String, location: String?, imageURL: String, rating: Double? = nil, price: Double = 0.0, priceCurrency: Currency = .eur, exhibitionStartDate: String? = nil, exhibitionEndDate: String? = nil) {
         self.id = id
         self.name = name
         self.type = type
