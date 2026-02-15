@@ -14,7 +14,7 @@ struct AttractionCardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Image
+            // Image part
             ZStack(alignment: .topTrailing) {
                 getImage()
                 
@@ -126,7 +126,7 @@ private extension AttractionCardView {
     }
 }
 
-struct AttractionCard_Previews: PreviewProvider {
+struct AttractionCardView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleAttraction = Attraction(
             name: "Van Gogh Museum",
