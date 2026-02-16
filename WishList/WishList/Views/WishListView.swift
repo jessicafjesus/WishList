@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct WishListView: View {
-    var wishlistManager: WishListManager
-    let attractions: [Attraction]
+    private var wishlistManager: WishListManager
+    @State private var selectedAttraction: Attraction?
     
-    var wishlistAttractions: [Attraction] {
-        attractions.filter { wishlistManager.isInWishlist($0) }
+    init(wishlistManager: WishListManager) {
+        self.wishlistManager = wishlistManager
     }
     
     var body: some View {
         Group {
-            if wishlistAttractions.isEmpty {
+            if wishlistManager.wishlistItems.isEmpty {
                 EmptyWishListView()
             } else {
                 ScrollView {
                     VStack(spacing: 16) {
-                        // Header card
                         VStack(spacing: 12) {
                             Image(systemName: "heart.circle.fill")
                                 .font(.system(size: 50))
@@ -32,7 +31,7 @@ struct WishListView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                             
-                            Text("\(wishlistAttractions.count) attraction\(wishlistAttractions.count == 1 ? "" : "s") saved")
+                            Text("\(wishlistManager.wishlistItems.count) attraction\(wishlistManager.wishlistItems.count == 1 ? "" : "s") saved")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
@@ -46,6 +45,7 @@ struct WishListView: View {
                         
                         makeWishCards()
                     }
+                    .padding(.bottom, 20)
                 }
             }
         }
@@ -55,10 +55,10 @@ struct WishListView: View {
     
     func makeWishCards() -> some View {
         LazyVStack(spacing: 16) {
-            ForEach(wishlistAttractions) { attraction in
+            ForEach(wishlistManager.wishlistItems) { attraction in
                 NavigationLink(destination: AttractionDetailView(
-                    attraction: attraction,
-                    wishlistManager: wishlistManager
+                                    attraction: attraction,
+                                    wishlistManager: wishlistManager
                 )) {
                     WishListCardView(
                         attraction: attraction,
@@ -68,39 +68,22 @@ struct WishListView: View {
                             }
                         }
                     )
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedAttraction = attraction
+                    }
                 }
-                .buttonStyle(PlainButtonStyle())
             }
-            .padding(.horizontal)
         }
-    .padding(.bottom, 20)
+        .padding(.horizontal)
     }
 }
 
 
-
 struct WishlistView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleAttractions = [
-            Attraction(
-                name: "Van Gogh Museum",
-                type: .exhibition,
-                description: "World-class art gallery",
-                location: "Amsterdam, Netherlands",
-                imageURL: "https://example.com/image.jpg",
-                rating: 4.8,
-                price: 10.0,
-                priceCurrency: .eur,
-                exhibitionEndDate: "10/03/2026"
-            )
-        ]
-        
         NavigationView {
-            //force unwrap the first sample bc it's a sample and I know the first element exists
-            WishListView(
-                wishlistManager: WishListManager(),
-                attractions: sampleAttractions
-            )
+            WishListView(wishlistManager: WishListManager())
         }
     }
 }

@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18D2F40A5F2009A1234 /* WishListApp.swift */; };
-		1B80F1902F40A5F2009A1234 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* ContentView.swift */; };
+		1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* WishListView.swift */; };
 		1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1912F40A5F4009A1234 /* Assets.xcassets */; };
 		1B80F1952F40A5F4009A1234 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1942F40A5F4009A1234 /* Preview Assets.xcassets */; };
 		1B80F19F2F40A5F5009A1234 /* WishListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F19E2F40A5F5009A1234 /* WishListTests.swift */; };
 		1B80F1A92F40A5F5009A1234 /* WishListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1A82F40A5F5009A1234 /* WishListUITests.swift */; };
 		1B80F1AB2F40A5F5009A1234 /* WishListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1AA2F40A5F5009A1234 /* WishListUITestsLaunchTests.swift */; };
+		1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */; };
+		1B80F1BA2F411BC6009A1234 /* WishListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B92F411BC5009A1234 /* WishListManager.swift */; };
+		1B80F1BC2F411BE5009A1234 /* AttractionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */; };
+		1B80F1BE2F411C18009A1234 /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */; };
+		1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1C12F411D44009A1234 /* AttractionsListView.swift */; };
+		1B80F1C62F411E84009A1234 /* offerings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1C52F411E84009A1234 /* offerings.json */; };
+		1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */; };
+		1B80F1D02F4122FE009A1234 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1CF2F4122FE009A1234 /* Currency.swift */; };
+		1B80F1D22F412658009A1234 /* AttractionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D12F412658009A1234 /* AttractionType.swift */; };
+		1B80F1D42F412970009A1234 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D32F412970009A1234 /* Attraction.swift */; };
+		1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */; };
+		1B80F1D82F41441E009A1234 /* WishListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D72F41441E009A1234 /* WishListCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,7 @@
 /* Begin PBXFileReference section */
 		1B80F18A2F40A5F2009A1234 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F18D2F40A5F2009A1234 /* WishListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListApp.swift; sourceTree = "<group>"; };
-		1B80F18F2F40A5F2009A1234 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B80F18F2F40A5F2009A1234 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		1B80F1912F40A5F4009A1234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B80F1942F40A5F4009A1234 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B80F19A2F40A5F5009A1234 /* WishListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,18 @@
 		1B80F1A42F40A5F5009A1234 /* WishListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F1A82F40A5F5009A1234 /* WishListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListUITests.swift; sourceTree = "<group>"; };
 		1B80F1AA2F40A5F5009A1234 /* WishListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingsResponse.swift; sourceTree = "<group>"; };
+		1B80F1B92F411BC5009A1234 /* WishListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManager.swift; sourceTree = "<group>"; };
+		1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionCardView.swift; sourceTree = "<group>"; };
+		1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
+		1B80F1C12F411D44009A1234 /* AttractionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsListView.swift; sourceTree = "<group>"; };
+		1B80F1C52F411E84009A1234 /* offerings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = offerings.json; path = ../../../../../../Downloads/offerings.json; sourceTree = "<group>"; };
+		1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoader.swift; sourceTree = "<group>"; };
+		1B80F1CF2F4122FE009A1234 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		1B80F1D12F412658009A1234 /* AttractionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionType.swift; sourceTree = "<group>"; };
+		1B80F1D32F412970009A1234 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWishListView.swift; sourceTree = "<group>"; };
+		1B80F1D72F41441E009A1234 /* WishListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +118,11 @@
 		1B80F18C2F40A5F2009A1234 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
+				1B80F1C82F411F96009A1234 /* Enums */,
+				1B80F1C72F411E9D009A1234 /* Logic */,
+				1B80F1C42F411E62009A1234 /* Model */,
+				1B80F1C32F411E3B009A1234 /* Views */,
 				1B80F18D2F40A5F2009A1234 /* WishListApp.swift */,
-				1B80F18F2F40A5F2009A1234 /* ContentView.swift */,
 				1B80F1912F40A5F4009A1234 /* Assets.xcassets */,
 				1B80F1932F40A5F4009A1234 /* Preview Content */,
 			);
@@ -125,6 +152,47 @@
 				1B80F1AA2F40A5F5009A1234 /* WishListUITestsLaunchTests.swift */,
 			);
 			path = WishListUITests;
+			sourceTree = "<group>";
+		};
+		1B80F1C32F411E3B009A1234 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */,
+				1B80F18F2F40A5F2009A1234 /* WishListView.swift */,
+				1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */,
+				1B80F1C12F411D44009A1234 /* AttractionsListView.swift */,
+				1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */,
+				1B80F1D72F41441E009A1234 /* WishListCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1B80F1C42F411E62009A1234 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B80F1C52F411E84009A1234 /* offerings.json */,
+				1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */,
+				1B80F1D32F412970009A1234 /* Attraction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B80F1C72F411E9D009A1234 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				1B80F1B92F411BC5009A1234 /* WishListManager.swift */,
+				1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		1B80F1C82F411F96009A1234 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				1B80F1CF2F4122FE009A1234 /* Currency.swift */,
+				1B80F1D12F412658009A1234 /* AttractionType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B80F1C62F411E84009A1234 /* offerings.json in Resources */,
 				1B80F1952F40A5F4009A1234 /* Preview Assets.xcassets in Resources */,
 				1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +326,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B80F1902F40A5F2009A1234 /* ContentView.swift in Sources */,
+				1B80F1BE2F411C18009A1234 /* AttractionDetailView.swift in Sources */,
+				1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */,
+				1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */,
+				1B80F1D42F412970009A1234 /* Attraction.swift in Sources */,
+				1B80F1D22F412658009A1234 /* AttractionType.swift in Sources */,
+				1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */,
+				1B80F1BC2F411BE5009A1234 /* AttractionCardView.swift in Sources */,
+				1B80F1D82F41441E009A1234 /* WishListCardView.swift in Sources */,
+				1B80F1D02F4122FE009A1234 /* Currency.swift in Sources */,
+				1B80F1BA2F411BC6009A1234 /* WishListManager.swift in Sources */,
 				1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */,
+				1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */,
+				1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
