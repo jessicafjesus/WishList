@@ -103,6 +103,16 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		1B43ED4F2F43CDF100122AE3 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				1B80F18F2F40A5F2009A1234 /* WishListView.swift */,
+				1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */,
+				1B80F1D72F41441E009A1234 /* WishListCardView.swift */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
 		1B80F1812F40A5F2009A1234 = {
 			isa = PBXGroup;
 			children = (
@@ -156,12 +166,10 @@
 		1B80F1C32F411E3B009A1234 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B43ED4F2F43CDF100122AE3 /* WishList */,
 				1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */,
-				1B80F18F2F40A5F2009A1234 /* WishListView.swift */,
 				1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */,
 				1B80F1C12F411D44009A1234 /* AttractionsListView.swift */,
-				1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */,
-				1B80F1D72F41441E009A1234 /* WishListCardView.swift */,
 				1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */,
 			);
 			path = Views;
