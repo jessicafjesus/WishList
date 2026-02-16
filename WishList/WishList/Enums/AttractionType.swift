@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AttractionType: String {
+enum AttractionType: String, Codable {
     case exhibition = "Exhibition"
     case venue = "Venue"
     

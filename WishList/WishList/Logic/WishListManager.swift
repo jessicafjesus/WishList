@@ -9,47 +9,69 @@ import Foundation
 
 @Observable
 class WishListManager {
-    private(set) var wishlistItems: Set<UUID>
+    private(set) var wishlistItems: [Attraction]
     
-    private let userDefaultsKey = "wishlistItems"
+    private let fileName = "wishlist.json"
     
-    init(wishlistItems: Set<UUID> = []) {
+    private var fileURL: URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDirectory.appendingPathComponent(fileName)
+    }
+    
+    init(wishlistItems: [Attraction] = []) {
         self.wishlistItems = wishlistItems
         loadWishlist()
     }
     
     func isInWishlist(_ attraction: Attraction) -> Bool {
-        wishlistItems.contains(attraction.id)
+        wishlistItems.contains(where: { $0.id == attraction.id })
     }
     
+    /// When the user presses it and it's not selected, it's added, if it's selected, it's removed
+    ///
+    /// - Parameter attraction: Attraction associated with the action
     func toggleWishlist(_ attraction: Attraction) {
-        if wishlistItems.contains(attraction.id) {
-            wishlistItems.remove(attraction.id)
+        if let index = wishlistItems.firstIndex(where: { $0.id == attraction.id }) {
+            wishlistItems.remove(at: index)
         } else {
-            wishlistItems.insert(attraction.id)
+            wishlistItems.append(attraction)
         }
         saveWishlist()
     }
     
     func addToWishlist(_ attraction: Attraction) {
-        wishlistItems.insert(attraction.id)
-        saveWishlist()
+        if !isInWishlist(attraction) {
+            wishlistItems.append(attraction)
+            saveWishlist()
+        }
     }
     
     func removeFromWishlist(_ attraction: Attraction) {
-        wishlistItems.remove(attraction.id)
-        saveWishlist()
+        if let index = wishlistItems.firstIndex(where: { $0.id == attraction.id }) {
+            wishlistItems.remove(at: index)
+            saveWishlist()
+        }
     }
     
     private func saveWishlist() {
-        let idsArray = Array(wishlistItems).map { $0.uuidString }
-        UserDefaults.standard.set(idsArray, forKey: userDefaultsKey)
+        do {
+            let data = try JSONEncoder().encode(wishlistItems)
+            try data.write(to: fileURL, options: .atomic)
+        } catch {
+            print("Failed to save wishlist: \(error.localizedDescription)")
+        }
     }
     
     private func loadWishlist() {
-        guard let idsArray = UserDefaults.standard.array(forKey: userDefaultsKey) as? [String] else {
+        guard FileManager.default.fileExists(atPath: fileURL.path) else {
             return
         }
-        wishlistItems = Set(idsArray.compactMap { UUID(uuidString: $0) })
+        
+        do {
+            let data = try Data(contentsOf: fileURL)
+            wishlistItems = try JSONDecoder().decode([Attraction].self, from: data)
+        } catch {
+            print("Failed to load wishlist: \(error.localizedDescription)")
+        }
     }
 }

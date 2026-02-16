@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Attraction: Identifiable {
+struct Attraction: Identifiable, Codable {
     let id: UUID
     let name: String
     let type: AttractionType
