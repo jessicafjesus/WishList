@@ -53,6 +53,7 @@ class WishListManager {
         }
     }
     
+    // In this case, I'm saving the information about the wish list in a json file, but this could be easily changed by an api call
     private func saveWishlist() {
         do {
             let data = try JSONEncoder().encode(wishlistItems)

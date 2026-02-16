@@ -70,7 +70,7 @@ private extension AttractionResponse {
     
     func description() -> String {
         if type == "EXHIBITION", let loc = location, let start = startDate, let end = endDate {
-            return "Special exhibition at \(loc). Running from \(formatDate(start)) to \(formatDate(end))."
+            return "Special exhibition at \(loc)."
         } else if type == "VENUE", let rating = starsRating {
             return "Very interesting attraction with a \(String(format: "%.1f", rating)) star rating."
         } else {

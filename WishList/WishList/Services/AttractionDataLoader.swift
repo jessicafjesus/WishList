@@ -25,6 +25,9 @@ class AttractionDataLoader {
             return response.items.map { $0.makeAttraction() }
         } catch {
             print("Failed to decode JSON: \(error)")
+            if let decodingError = error as? DecodingError {
+                print("   Details: \(decodingError)")
+            }
             return []
         }
     }

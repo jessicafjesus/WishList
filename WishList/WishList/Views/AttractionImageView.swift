@@ -25,10 +25,12 @@ struct AttractionImageView: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .frame(height: height)
                     .clipped()
             case .failure, .empty:
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
+                    .frame(height: height)
                     .overlay(
                         Image(systemName: icon)
                             .font(.system(size: 80))
@@ -37,8 +39,8 @@ struct AttractionImageView: View {
             @unknown default:
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
+                    .frame(height: height)
             }
         }
-        .frame(height: height)
     }
 }
