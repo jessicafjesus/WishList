@@ -152,6 +152,7 @@ private extension AttractionDetailView {
 struct AttractionDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleAttraction = Attraction(
+            id: "aaaa3",
             name: "Van Gogh Museum",
             type: .exhibition,
             description: "One of the world's premier art galleries",

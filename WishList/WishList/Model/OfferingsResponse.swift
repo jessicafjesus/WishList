@@ -35,7 +35,7 @@ struct AttractionResponse: Codable {
 extension AttractionResponse {
     func makeAttraction() -> Attraction {
         Attraction(
-            id: UUID(uuidString: id) ?? UUID(),
+            id: id,
             name: name,
             type: attractionType(),
             description: description(),
