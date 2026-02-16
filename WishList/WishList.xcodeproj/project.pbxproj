@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */; };
 		1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18D2F40A5F2009A1234 /* WishListApp.swift */; };
 		1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* WishListView.swift */; };
 		1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1912F40A5F4009A1234 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionImageView.swift; sourceTree = "<group>"; };
 		1B80F18A2F40A5F2009A1234 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F18D2F40A5F2009A1234 /* WishListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListApp.swift; sourceTree = "<group>"; };
 		1B80F18F2F40A5F2009A1234 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1B80F1C12F411D44009A1234 /* AttractionsListView.swift */,
 				1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */,
 				1B80F1D72F41441E009A1234 /* WishListCardView.swift */,
+				1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				1B80F1BA2F411BC6009A1234 /* WishListManager.swift in Sources */,
 				1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */,
 				1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */,
+				1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */,
 				1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

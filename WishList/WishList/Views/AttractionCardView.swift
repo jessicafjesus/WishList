@@ -16,7 +16,7 @@ struct AttractionCardView: View {
         VStack(alignment: .leading, spacing: 0) {
             // Image part
             ZStack(alignment: .topTrailing) {
-                getImage()
+                AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 180)
                 
                 Button(action: onToggleWishlist) {
                     Image(systemName: isInWishlist ? "heart.fill" : "heart")
@@ -38,30 +38,6 @@ struct AttractionCardView: View {
 }
 
 private extension AttractionCardView {
-    func getImage() -> some View {
-        AsyncImage(url: URL(string: attraction.imageURL)) { phase in
-            switch phase {
-            case .success(let image):
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipped()
-            case .failure, .empty:
-                Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-                    .overlay(
-                        Image(systemName: attraction.type.icon)
-                            .font(.system(size: 40))
-                            .foregroundColor(.gray.opacity(0.5))
-                    )
-            @unknown default:
-                Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-            }
-        }
-        .frame(height: 180)
-    }
-    
     func cardInformation() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {

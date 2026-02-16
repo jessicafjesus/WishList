@@ -13,7 +13,7 @@ struct WishListCardView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            getImage()
+            AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 100)
             
             cardInformation()
         }
@@ -25,32 +25,6 @@ struct WishListCardView: View {
 }
 
 private extension WishListCardView {
-    func getImage() -> some View {
-        AsyncImage(url: URL(string: attraction.imageURL)) { phase in
-            switch phase {
-            case .success(let image):
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-            case .failure, .empty:
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.gray.opacity(0.2))
-                    Image(systemName: attraction.type.icon)
-                        .font(.system(size: 30))
-                        .foregroundColor(.gray.opacity(0.5))
-                }
-            @unknown default:
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.gray.opacity(0.2))
-                }
-            }
-        }
-        .frame(width: 100, height: 100)
-    }
-    
     func cardInformation() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {

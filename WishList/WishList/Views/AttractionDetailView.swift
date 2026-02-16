@@ -18,38 +18,9 @@ struct AttractionDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                // Hero image
-                AsyncImage(url: URL(string: attraction.imageURL)) { phase in
-                    switch phase {
-                    case .empty:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(height: 300)
-                            .overlay(ProgressView())
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 300)
-                            .clipped()
-                    case .failure:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(height: 300)
-                            .overlay(
-                                Image(systemName: attraction.type.icon)
-                                    .font(.system(size: 80))
-                                    .foregroundColor(.gray.opacity(0.5))
-                            )
-                    @unknown default:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(height: 300)
-                    }
-                }
+                AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 300)
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    // Type badge
                     HStack {
                         Image(systemName: attraction.type.icon)
                             .font(.caption)
@@ -68,51 +39,7 @@ struct AttractionDetailView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    if attraction.type == .venue, let location = attraction.location {
-                        HStack(spacing: 6) {
-                            Image(systemName: "mappin.circle.fill")
-                                .foregroundColor(.red)
-                            Text(location)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    
-                    HStack(spacing: 24) {
-                        if attraction.type == .venue, let rating = attraction.rating {
-                            HStack(spacing: 6) {
-                                Image(systemName: "star.fill")
-                                    .foregroundColor(.orange)
-                                Text(String(format: "%.1f", rating))
-                                    .fontWeight(.semibold)
-                            }
-                        }
-                        
-                        HStack(spacing: 6) {
-                            Image(systemName: "banknote.fill")
-                                .foregroundColor(.green)
-                            Text(attraction.formattedPrice)
-                                .fontWeight(.semibold)
-                        }
-                    }
-                    .font(.subheadline)
-                    
-                    // Exhibition dates if applicable
-                    if attraction.type == .exhibition,
-                       let startDate = attraction.exhibitionStartDate,
-                       let endDate = attraction.exhibitionEndDate {
-                        HStack(spacing: 6) {
-                            Image(systemName: "calendar")
-                                .foregroundColor(.purple)
-                            Text("\(formatDate(startDate)) - \(formatDate(endDate))")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                        }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(Color.purple.opacity(0.1))
-                        .cornerRadius(8)
-                    }
+                    attractionInfo()
                     
                     Divider()
                     
@@ -128,25 +55,7 @@ struct AttractionDetailView: View {
                             .lineSpacing(4)
                     }
                     
-                    // Wishlist button
-                    Button(action: {
-                        withAnimation(.spring(response: 0.3)) {
-                            wishlistManager.toggleWishlist(attraction)
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: isInWishlist ? "heart.fill" : "heart")
-                                .font(.title3)
-                            Text(isInWishlist ? "Remove from Wishlist" : "Add to Wishlist")
-                                .font(.headline)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(isInWishlist ? Color.red : Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                    }
-                    .padding(.top, 8)
+                    wishButton()
                 }
                 .padding(20)
             }
@@ -154,8 +63,10 @@ struct AttractionDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea(edges: .top)
     }
-    
-    private func formatDate(_ dateString: String) -> String {
+}
+
+private extension AttractionDetailView {
+    func formatDate(_ dateString: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -164,6 +75,77 @@ struct AttractionDetailView: View {
             return formatter.string(from: date)
         }
         return dateString
+    }
+    
+    @ViewBuilder
+    func attractionInfo() -> some View {
+        if attraction.type == .venue, let location = attraction.location {
+            HStack(spacing: 6) {
+                Image(systemName: "mappin.circle.fill")
+                    .foregroundColor(.red)
+                Text(location)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+        
+        HStack(spacing: 24) {
+            // Rating if applicable
+            if attraction.type == .venue, let rating = attraction.rating {
+                HStack(spacing: 6) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.orange)
+                    Text(String(format: "%.1f", rating))
+                        .fontWeight(.semibold)
+                }
+            }
+            
+            HStack(spacing: 6) {
+                Image(systemName: "banknote.fill")
+                    .foregroundColor(.green)
+                Text(attraction.formattedPrice)
+                    .fontWeight(.semibold)
+            }
+        }
+        .font(.subheadline)
+        
+        // Exhibition dates if applicable
+        if attraction.type == .exhibition,
+           let startDate = attraction.exhibitionStartDate,
+           let endDate = attraction.exhibitionEndDate {
+            HStack(spacing: 6) {
+                Image(systemName: "calendar")
+                    .foregroundColor(.purple)
+                Text("\(formatDate(startDate)) - \(formatDate(endDate))")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(Color.purple.opacity(0.1))
+            .cornerRadius(8)
+        }
+    }
+    
+    func wishButton() -> some View {
+        Button(action: {
+            withAnimation(.spring(response: 0.3)) {
+                wishlistManager.toggleWishlist(attraction)
+            }
+        }) {
+            HStack {
+                Image(systemName: isInWishlist ? "heart.fill" : "heart")
+                    .font(.title3)
+                Text(isInWishlist ? "Remove from Wishlist" : "Add to Wishlist")
+                    .font(.headline)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(isInWishlist ? Color.red : Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(12)
+        }
+        .padding(.top, 8)
     }
 }
 
@@ -177,7 +159,9 @@ struct AttractionDetailView_Previews: PreviewProvider {
             imageURL: "https://example.com/image.jpg",
             rating: 4.8,
             price: 10.0,
-            priceCurrency: .eur
+            priceCurrency: .eur,
+            exhibitionStartDate: "20/03/2026",
+            exhibitionEndDate: "02/04/2026"
         )
         
         NavigationView {
