@@ -8,16 +8,15 @@
 import Foundation
 import os
 
-@MainActor
 @Observable
 class WishListViewModel: WishListViewModelProtocol {
     private(set) var wishlistItems: [Attraction] = []
     private(set) var error: AppError?
     
     private let logger = Logger()
-    private let store: WishListStore
+    private let store: any WishListStoreProtocol
     
-    init(store: WishListStore? = nil, loadOnInit: Bool = true) {
+    init(store: WishListStoreProtocol? = nil) {
         if let store {
             self.store = store
         } else {

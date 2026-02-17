@@ -15,10 +15,10 @@ struct AttractionsListView: View {
     @State private var isLoading = true
     @State private var attractions: [Attraction] = []
     
-    private let wishlistViewModel: WishListViewModel
+    private let wishlistViewModel: any WishListViewModelProtocol
     private let dataLoader: any AttractionDataLoaderProtocol
     
-    init(wishlistViewModel: WishListViewModel, dataLoader: AttractionDataLoaderProtocol) {
+    init(wishlistViewModel: WishListViewModelProtocol, dataLoader: AttractionDataLoaderProtocol) {
         self.wishlistViewModel = wishlistViewModel
         self.dataLoader = dataLoader
     }
