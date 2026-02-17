@@ -15,7 +15,7 @@ struct AttractionsListView: View {
     @State private var isLoading = true
     @State private var attractions: [Attraction] = []
     
-    private let wishlistViewModel: any WishListViewModelProtocol
+    private let wishlistViewModel: WishListViewModelProtocol
     private let dataLoader: any AttractionDataLoaderProtocol
     
     init(wishlistViewModel: WishListViewModelProtocol, dataLoader: AttractionDataLoaderProtocol) {
@@ -77,7 +77,7 @@ struct AttractionsListView: View {
             .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search attractions")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: WishListView(wishlistManager: wishlistViewModel)) {
+                    NavigationLink(destination: WishListView(wishlistViewModel: wishlistViewModel)) {
                         Image(systemName: "heart.circle.fill")
                             .font(.title3)
                             .foregroundColor(.red)
@@ -99,7 +99,7 @@ private extension AttractionsListView {
         let unique = Set(types)
         return unique.sorted { $0.rawValue < $1.rawValue }
     }
-//    
+    
     func loadAttractions() {
         let filename = "offerings"
         let items = dataLoader.loadAttractionsFromFile(named: filename, bundle: .main)
@@ -159,7 +159,7 @@ private extension AttractionsListView {
             ForEach(filteredAttractions) { attraction in
                 NavigationLink(destination: AttractionDetailView(
                     attraction: attraction,
-                    wishlistManager: wishlistViewModel
+                    wishlistViewModel: wishlistViewModel
                 )) {
                     AttractionCardView(
                         attraction: attraction,
@@ -171,7 +171,7 @@ private extension AttractionsListView {
                         }
                     )
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(.plain)
             }
         }
         .padding(.horizontal)

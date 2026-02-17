@@ -9,15 +9,15 @@ import SwiftUI
 
 struct AttractionDetailView: View {
     let attraction: Attraction
-    let wishlistManager: WishListViewModelProtocol
+    let wishlistViewModel: WishListViewModelProtocol
     
-    init(attraction: Attraction, wishlistManager: WishListViewModelProtocol) {
+    init(attraction: Attraction, wishlistViewModel: WishListViewModelProtocol) {
         self.attraction = attraction
-        self.wishlistManager = wishlistManager
+        self.wishlistViewModel = wishlistViewModel
     }
     
     var isInWishlist: Bool {
-        wishlistManager.isInWishlist(attraction)
+        wishlistViewModel.isInWishlist(attraction)
     }
     
     var body: some View {
@@ -124,7 +124,7 @@ private extension AttractionDetailView {
     func wishButton() -> some View {
         Button(action: {
             withAnimation(.spring(response: 0.3)) {
-                wishlistManager.toggleWishlist(attraction)
+                wishlistViewModel.toggleWishlist(attraction)
             }
         }) {
             HStack {
@@ -150,7 +150,7 @@ struct AttractionDetailView_Previews: PreviewProvider {
         NavigationView {
             AttractionDetailView(
                 attraction: sampleAttraction,
-                wishlistManager: WishListViewModel()
+                wishlistViewModel: WishListViewModel()
             )
         }
     }

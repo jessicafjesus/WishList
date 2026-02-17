@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct WishListView: View {
-    private var wishlistManager: WishListViewModelProtocol
+    private var wishlistViewModel: WishListViewModelProtocol
     @State private var selectedAttraction: Attraction?
     
-    init(wishlistManager: WishListViewModelProtocol) {
-        self.wishlistManager = wishlistManager
+    init(wishlistViewModel: WishListViewModelProtocol) {
+        self.wishlistViewModel = wishlistViewModel
     }
     
     var body: some View {
         Group {
-            if wishlistManager.wishlistItems.isEmpty {
+            if wishlistViewModel.wishlistItems.isEmpty {
                 VStack(spacing: 12) {
-                    if let wishlistError = wishlistManager.error {
+                    if let wishlistError = wishlistViewModel.error {
                         Text(wishlistError.errorDescription ?? "Unknown error")
                             .font(.footnote)
                             .foregroundColor(.red)
@@ -29,8 +29,8 @@ struct WishListView: View {
                 }
             } else {
                 ScrollView {
-                    VStack(spacing: 16) {
-                        if let wishlistError = wishlistManager.error {
+                    VStack(spacing: 12) {
+                        if let wishlistError = wishlistViewModel.error {
                             Text(wishlistError.errorDescription ?? "Unknown error")
                                 .font(.footnote)
                                 .foregroundColor(.red)
@@ -46,17 +46,16 @@ struct WishListView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                             
-                            Text("\(wishlistManager.wishlistItems.count) attraction\(wishlistManager.wishlistItems.count == 1 ? "" : "s") saved")
+                            Text("\(wishlistViewModel.wishlistItems.count) attraction\(wishlistViewModel.wishlistItems.count == 1 ? "" : "s") saved")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 24)
+                        .padding(.vertical, 14)
                         .background(Color(.systemBackground))
                         .cornerRadius(16)
                         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
                         .padding(.horizontal)
-                        .padding(.top, 8)
                         
                         makeWishCards()
                     }
@@ -64,28 +63,31 @@ struct WishListView: View {
                 }
             }
         }
+        .background(Color.gray.opacity(0.05))
         .navigationTitle("Wishlist")
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(item: $selectedAttraction) { attraction in
-            AttractionDetailView(attraction: attraction, wishlistManager: wishlistManager)
+            AttractionDetailView(attraction: attraction, wishlistViewModel: wishlistViewModel)
         }
     }
     
     func makeWishCards() -> some View {
         LazyVStack(spacing: 16) {
-            ForEach(wishlistManager.wishlistItems) { attraction in
-                WishListCardView(
+            ForEach(wishlistViewModel.wishlistItems) { attraction in
+                NavigationLink(destination: AttractionDetailView(
                     attraction: attraction,
-                    onRemove: {
-                        withAnimation(.spring(response: 0.3)) {
-                            wishlistManager.removeFromWishlist(attraction)
+                    wishlistViewModel: wishlistViewModel
+                )) {
+                    WishListCardView(
+                        attraction: attraction,
+                        onRemove: {
+                            withAnimation(.spring(response: 0.3)) {
+                                wishlistViewModel.removeFromWishlist(attraction)
+                            }
                         }
-                    }
-                )
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    selectedAttraction = attraction
+                    )
                 }
+                .buttonStyle(.plain)
             }
         }
         .padding(.horizontal)
@@ -96,7 +98,7 @@ struct WishListView: View {
 struct WishlistView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WishListView(wishlistManager: WishListViewModel())
+            WishListView(wishlistViewModel: WishListViewModel())
         }
     }
 }

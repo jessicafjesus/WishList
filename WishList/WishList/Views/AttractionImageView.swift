@@ -26,6 +26,7 @@ struct AttractionImageView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: height)
+                    .cornerRadius(8)
                     .clipped()
             case .failure, .empty:
                 Rectangle()
