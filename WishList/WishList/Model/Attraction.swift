@@ -20,7 +20,7 @@ struct Attraction: Codable, Identifiable {
     let exhibitionStartDate: String?
     let exhibitionEndDate: String?
     
-    init(id: String, name: String, type: AttractionType, description: String, location: String?, imageURL: String, rating: Double? = nil, price: Double = 0.0, priceCurrency: Currency = .eur, exhibitionStartDate: String? = nil, exhibitionEndDate: String? = nil) {
+    init(id: String, name: String, type: AttractionType, description: String, location: String? = nil, imageURL: String, rating: Double? = nil, price: Double = 0.0, priceCurrency: Currency = .eur, exhibitionStartDate: String? = nil, exhibitionEndDate: String? = nil) {
         self.id = id
         self.name = name
         self.type = type

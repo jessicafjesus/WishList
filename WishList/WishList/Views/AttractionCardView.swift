@@ -104,18 +104,7 @@ private extension AttractionCardView {
 
 struct AttractionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleAttraction = Attraction(
-            id: "aaaa3",
-            name: "Van Gogh Museum",
-            type: .venue,
-            description: "One of the world's premier art galleries",
-            location: "Amsterdam, Netherlands",
-            imageURL: "https://example.com/image.jpg",
-            rating: 4.8,
-            price: 10.0,
-            priceCurrency: .eur,
-            exhibitionEndDate: "10/03/2026"
-        )
+        let sampleAttraction = MockAttraction().makeExhibitionAttraction()
         
         AttractionCardView(
             attraction: sampleAttraction,
