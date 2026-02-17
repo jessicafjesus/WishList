@@ -10,16 +10,19 @@ import Foundation
 /// Application-wide error types
 enum AppError: LocalizedError {
     case fileNotFound(String)
+    case fileFailedToLoad(String)
     case decodingFailed(Error)
     case encodingFailed(Error)
     case fileOperationFailed(Error)
     case networkUnavailable
     case invalidData
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .fileNotFound(let filename):
-            return "Could not find file: \(filename)"
+            return "Could not find file: \(filename).json"
+        case .fileFailedToLoad(let filename):
+            return "Could not load file: \(filename).json"
         case .decodingFailed(let error):
             return "Failed to decode data: \(error.localizedDescription)"
         case .encodingFailed(let error):
@@ -30,19 +33,6 @@ enum AppError: LocalizedError {
             return "Network connection unavailable"
         case .invalidData:
             return "The data received is invalid"
-        }
-    }
-    
-    var recoverySuggestion: String? {
-        switch self {
-        case .fileNotFound:
-            return "Please check that the file exists in your app bundle."
-        case .networkUnavailable:
-            return "Please check your internet connection and try again."
-        case .decodingFailed, .invalidData:
-            return "The data format may have changed. Please contact support."
-        default:
-            return "Please try again or contact support if the problem persists."
         }
     }
 }

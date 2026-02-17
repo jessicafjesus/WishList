@@ -6,16 +6,21 @@
 //
 
 import Foundation
+import os
 
 class AttractionDataLoader {
-    static func loadAttractionsFromFile(named filename: String, bundle: Bundle = .main) -> [Attraction] {
+    private let logger = Logger()
+    
+    func loadAttractionsFromFile(named filename: String, bundle: Bundle = .main) -> [Attraction] {
         guard let url = bundle.url(forResource: filename, withExtension: "json") else {
-            print("Failed to locate \(filename).json")
+            let error = AppError.fileNotFound(filename)
+            logger.error("Error: \(error.errorDescription)")
             return []
         }
         
         guard let data = try? Data(contentsOf: url) else {
-            print("Failed to load \(filename).json")
+            let error = AppError.fileFailedToLoad(filename)
+            logger.error("Error: \(error.errorDescription)")
             return []
         }
         
@@ -23,12 +28,12 @@ class AttractionDataLoader {
             let decoder = JSONDecoder()
             let response = try decoder.decode(OfferingsResponse.self, from: data)
             return response.items.map { $0.makeAttraction() }
+        } catch let error as DecodingError {
+            logger.error("Details: \(error.localizedDescription)")
         } catch {
-            print("Failed to decode JSON: \(error)")
-            if let decodingError = error as? DecodingError {
-                print("   Details: \(decodingError)")
-            }
-            return []
+            let error = AppError.fileOperationFailed(error)
+            logger.error("Details: \(error.localizedDescription)")
         }
+        return []
     }
 }

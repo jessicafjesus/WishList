@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 @Observable
 class WishListManager: WishListManagerProtocol {
@@ -16,6 +17,7 @@ class WishListManager: WishListManagerProtocol {
     private(set) var error: AppError?
     
     private let fileName = "wishlist.json"
+    private let logger = Logger()
     
     private var fileURL: URL {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -105,20 +107,20 @@ private extension WishListManager {
         do {
             let items = try await load()
             wishlistItems = items
-            print("Loaded \(items.count) items from wishlist")
+            logger.info("Loaded \(items.count) items from wishlist")
         } catch {
             self.error = AppError.fileOperationFailed(error)
-            print("Failed to load wishlist: \(error.localizedDescription)")
+            logger.info("Failed to load wishlist: \(error.localizedDescription)")
         }
     }
     
     func saveWishlist() async {
         do {
             try await save(wishlistItems)
-            print("Saved \(wishlistItems.count) items to wishlist")
+            logger.debug("Saved \(wishlistItems.count) items to wishlist")
         } catch {
             self.error = AppError.fileOperationFailed(error)
-            print("Failed to save wishlist: \(error.localizedDescription)")
+            logger.info("Failed to save wishlist: \(error.localizedDescription)")
         }
     }
 }
