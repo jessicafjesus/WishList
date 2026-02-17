@@ -14,6 +14,7 @@ struct WishListCardView: View {
     var body: some View {
         HStack(spacing: 16) {
             AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 100)
+                .cornerRadius(8)
             
             cardInformation()
         }

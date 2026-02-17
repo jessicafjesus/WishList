@@ -73,6 +73,7 @@ struct AttractionsListView: View {
                 }
                 .padding(.bottom, 20)
             }
+            .background(Color.gray.opacity(0.05))
             .navigationTitle("Explore")
             .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search attractions")
             .toolbar {

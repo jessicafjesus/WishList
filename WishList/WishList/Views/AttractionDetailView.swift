@@ -22,8 +22,9 @@ struct AttractionDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 300)
+            VStack(alignment: .leading) {
+                AttractionImageView(imageURL: attraction.imageURL, icon: attraction.type.icon, height: 350)
+                
                 
                 VStack(alignment: .leading, spacing: 20) {
                     HStack {
@@ -59,11 +60,12 @@ struct AttractionDetailView: View {
                             .foregroundColor(.secondary)
                             .lineSpacing(4)
                     }
-                    
+
                     wishButton()
                 }
                 .padding(20)
             }
+            
         }
         .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea(edges: .top)
