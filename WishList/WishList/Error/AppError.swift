@@ -14,9 +14,9 @@ enum AppError: LocalizedError {
     case decodingFailed(Error)
     case encodingFailed(Error)
     case fileOperationFailed(Error)
-    case networkUnavailable
     case invalidData
     
+    // note: I don't have anything for the internet unavailability because only the images require internet. When they don't load, a place holder is shown. For the case of switching to API calls to get the events information, I would add that error here.
     var errorDescription: String? {
         switch self {
         case .fileNotFound(let filename):
@@ -29,8 +29,6 @@ enum AppError: LocalizedError {
             return "Failed to encode data: \(error.localizedDescription)"
         case .fileOperationFailed(let error):
             return "File operation failed: \(error.localizedDescription)"
-        case .networkUnavailable:
-            return "Network connection unavailable"
         case .invalidData:
             return "The data received is invalid"
         }
