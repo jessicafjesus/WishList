@@ -12,6 +12,9 @@
 		1B43ED512F43D36000122AE3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED502F43D36000122AE3 /* AppError.swift */; };
 		1B43ED552F43D99100122AE3 /* WishListManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */; };
 		1B43ED5D2F43E32C00122AE3 /* MockAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */; };
+		1B43ED5F2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */; };
+		1B43ED612F43F27A00122AE3 /* AttractionDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */; };
+		1B43ED632F43F2C800122AE3 /* AttractionMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */; };
 		1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18D2F40A5F2009A1234 /* WishListApp.swift */; };
 		1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* WishListView.swift */; };
 		1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1912F40A5F4009A1234 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		1B43ED502F43D36000122AE3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManagerProtocol.swift; sourceTree = "<group>"; };
 		1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAttraction.swift; sourceTree = "<group>"; };
+		1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderProtocol.swift; sourceTree = "<group>"; };
+		1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderTests.swift; sourceTree = "<group>"; };
+		1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperProtocol.swift; sourceTree = "<group>"; };
 		1B80F18A2F40A5F2009A1234 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F18D2F40A5F2009A1234 /* WishListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListApp.swift; sourceTree = "<group>"; };
 		1B80F18F2F40A5F2009A1234 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */,
+				1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */,
+				1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */,
 			);
 			path = Protoccols;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */,
+				1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */,
 			);
 			path = WishListTests;
 			sourceTree = "<group>";
@@ -322,7 +331,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B43ED5D2F43E32C00122AE3 /* MockAttraction.swift in Sources */,
+				1B43ED632F43F2C800122AE3 /* AttractionMapperProtocol.swift in Sources */,
 				1B80F1BE2F411C18009A1234 /* AttractionDetailView.swift in Sources */,
+				1B43ED5F2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift in Sources */,
 				1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */,
 				1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */,
 				1B80F1D42F412970009A1234 /* Attraction.swift in Sources */,
@@ -347,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B80F19F2F40A5F5009A1234 /* WishListManagerTests.swift in Sources */,
+				1B43ED612F43F27A00122AE3 /* AttractionDataLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

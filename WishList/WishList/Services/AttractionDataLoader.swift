@@ -8,7 +8,7 @@
 import Foundation
 import os
 
-class AttractionDataLoader {
+class AttractionDataLoader: AttractionDataLoaderProtocol {
     private let logger = Logger()
     
     func loadAttractionsFromFile(named filename: String, bundle: Bundle = .main) -> [Attraction] {

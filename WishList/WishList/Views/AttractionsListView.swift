@@ -12,7 +12,7 @@ struct AttractionsListView: View {
     @State private var searchText = ""
     @State private var selectedType: AttractionType?
     
-    let attractions: [Attraction] = AttractionDataLoader.loadAttractionsFromFile(named: "offerings")
+    let attractions: [Attraction] = AttractionDataLoader().loadAttractionsFromFile(named: "offerings")
     
     // We could add more but it would appear in a filter type of way. Since here it's only 2, I'm going to show all of them
     var attractionTypes: [AttractionType] {

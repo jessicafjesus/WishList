@@ -117,7 +117,7 @@ private extension WishListManager {
     func saveWishlist() async {
         do {
             try await save(wishlistItems)
-            logger.debug("Saved \(wishlistItems.count) items to wishlist")
+            logger.debug("Saved \(self.wishlistItems.count) items to wishlist")
         } catch {
             self.error = AppError.fileOperationFailed(error)
             logger.info("Failed to save wishlist: \(error.localizedDescription)")

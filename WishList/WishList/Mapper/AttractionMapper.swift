@@ -8,7 +8,7 @@
 import Foundation
 
 /// Handles mapping from API response models to domain models
-struct AttractionMapper {
+struct AttractionMapper: AttractionMapperProtocol {
     /// Converts an AttractionResponse to an Attraction domain model
     func makeAttraction(_ response: AttractionResponse) -> Attraction {
         Attraction(
