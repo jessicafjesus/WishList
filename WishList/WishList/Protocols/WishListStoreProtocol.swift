@@ -6,6 +6,6 @@
 //
 
 protocol WishListStoreProtocol {
-    func load() async throws -> [Attraction]
-    func save(_ attractions: [Attraction]) async throws
+    func load() throws -> [Attraction]
+    func save(_ attractions: [Attraction]) throws
 }

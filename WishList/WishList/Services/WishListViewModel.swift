@@ -1,5 +1,5 @@
 //
-//  WishListManager.swift
+//  WishListViewModel.swift
 //  WishList
 //
 //  Created by Jessica Jesus on 15/02/2026.
@@ -8,6 +8,7 @@
 import Foundation
 import os
 
+@MainActor
 @Observable
 class WishListViewModel: WishListViewModelProtocol {
     private(set) var wishlistItems: [Attraction] = []

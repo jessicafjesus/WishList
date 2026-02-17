@@ -21,8 +21,8 @@ struct AttractionMapper: AttractionMapperProtocol {
             rating: response.starsRating,
             price: Double(response.price) ?? 0.0,
             priceCurrency: currency(response.priceCurrencyCode),
-            exhibitionStartDate: response.startDate,
-            exhibitionEndDate: response.endDate
+            exhibitionStartDate: formatDate(response.startDate),
+            exhibitionEndDate: formatDate(response.endDate)
         )
     }
     
@@ -44,7 +44,7 @@ struct AttractionMapper: AttractionMapperProtocol {
     }
     
     func description(for response: AttractionResponse) -> String {
-        if response.type == "EXHIBITION", let loc = response.location, let start = response.startDate, let end = response.endDate {
+        if response.type == "EXHIBITION", let loc = response.location {
             return "Special exhibition at \(loc)."
         } else if response.type == "VENUE", let rating = response.starsRating {
             return "Very interesting attraction with a \(String(format: "%.1f", rating)) star rating."
@@ -53,12 +53,14 @@ struct AttractionMapper: AttractionMapperProtocol {
         }
     }
     
-    func formatDate(_ dateString: String) -> String {
+    func formatDate(_ dateString: String?) -> String? {
+        guard let dateString else { return nil }
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         if let date = formatter.date(from: dateString) {
-            formatter.dateFormat = "MMM d, yyyy"
+            formatter.dateFormat = "dd-MM-yyyy"
             return formatter.string(from: date)
         }
         return dateString

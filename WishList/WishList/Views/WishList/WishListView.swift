@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WishListView: View {
-    @Bindable private var wishlistManager: WishListViewModel
+    private var wishlistManager: WishListViewModelProtocol
     @State private var selectedAttraction: Attraction?
     
-    init(wishlistManager: WishListViewModel) {
+    init(wishlistManager: WishListViewModelProtocol) {
         self.wishlistManager = wishlistManager
     }
     
@@ -36,6 +36,7 @@ struct WishListView: View {
                                 .foregroundColor(.red)
                                 .padding(.horizontal)
                         }
+                        
                         VStack(spacing: 12) {
                             Image(systemName: "heart.circle.fill")
                                 .font(.system(size: 50))
@@ -65,27 +66,25 @@ struct WishListView: View {
         }
         .navigationTitle("Wishlist")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(item: $selectedAttraction) { attraction in
+            AttractionDetailView(attraction: attraction, wishlistManager: wishlistManager)
+        }
     }
     
     func makeWishCards() -> some View {
         LazyVStack(spacing: 16) {
             ForEach(wishlistManager.wishlistItems) { attraction in
-                NavigationLink(destination: AttractionDetailView(
-                                    attraction: attraction,
-                                    wishlistManager: wishlistManager
-                )) {
-                    WishListCardView(
-                        attraction: attraction,
-                        onRemove: {
-                            withAnimation(.spring(response: 0.3)) {
-                                wishlistManager.removeFromWishlist(attraction)
-                            }
+                WishListCardView(
+                    attraction: attraction,
+                    onRemove: {
+                        withAnimation(.spring(response: 0.3)) {
+                            wishlistManager.removeFromWishlist(attraction)
                         }
-                    )
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        selectedAttraction = attraction
                     }
+                )
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    selectedAttraction = attraction
                 }
             }
         }

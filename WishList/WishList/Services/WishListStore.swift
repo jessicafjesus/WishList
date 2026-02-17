@@ -7,7 +7,7 @@
 
 import Foundation
 
-actor WishListStore: WishListStoreProtocol {
+final class WishListStore: WishListStoreProtocol {
     private let fileURL: URL
     
     init(fileURL: URL) {

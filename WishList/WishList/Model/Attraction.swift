@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Attraction: Codable, Identifiable {
+struct Attraction: Codable, Identifiable, Hashable {
     let id: String
     let name: String
     let type: AttractionType
@@ -21,7 +21,7 @@ struct Attraction: Codable, Identifiable {
     let exhibitionEndDate: String?
     
     init(id: String, name: String, type: AttractionType, description: String, location: String? = nil, imageURL: String, rating: Double? = nil, price: Double = 0.0, priceCurrency: Currency = .eur, exhibitionStartDate: String? = nil, exhibitionEndDate: String? = nil) {
-        self.id = id
+        self.id = "\(type)-\(id)" // there are 2 duplicated ids for different things. Not sure if it was on purpose, it shouldn't.
         self.name = name
         self.type = type
         self.description = description

@@ -12,14 +12,12 @@
 		1B43ED552F43D99100122AE3 /* WishListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */; };
 		1B43ED5D2F43E32C00122AE3 /* MockAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */; };
 		1B43ED5F2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */; };
-		1B43ED612F43F27A00122AE3 /* AttractionDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */; };
 		1B43ED712F43F9AA00122AE3 /* AttractionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED702F43F9AA00122AE3 /* AttractionMapper.swift */; };
 		1B43ED742F43FD0B00122AE3 /* WishListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED732F43FD0B00122AE3 /* WishListStore.swift */; };
 		1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18D2F40A5F2009A1234 /* WishListApp.swift */; };
 		1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* WishListView.swift */; };
 		1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1912F40A5F4009A1234 /* Assets.xcassets */; };
 		1B80F1952F40A5F4009A1234 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1942F40A5F4009A1234 /* Preview Assets.xcassets */; };
-		1B80F19F2F40A5F5009A1234 /* WishListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */; };
 		1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */; };
 		1B80F1BA2F411BC6009A1234 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B92F411BC5009A1234 /* WishListViewModel.swift */; };
 		1B80F1BC2F411BE5009A1234 /* AttractionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */; };
@@ -34,6 +32,10 @@
 		1BE345592F4484AA00E202CD /* WishListStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */; };
 		1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */; };
 		1BE345652F44A98E00E202CD /* offerings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE345642F44A98E00E202CD /* offerings.json */; };
+		1BE3456D2F44E40A00E202CD /* MockWishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */; };
+		1BE3456F2F44EF7500E202CD /* MockWishListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */; };
+		1BE345732F44F2CA00E202CD /* WishListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345722F44F13400E202CD /* WishListViewModelTests.swift */; };
+		1BE345772F44F69100E202CD /* AttractionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345762F44F69000E202CD /* AttractionMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,6 @@
 		1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModelProtocol.swift; sourceTree = "<group>"; };
 		1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAttraction.swift; sourceTree = "<group>"; };
 		1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderProtocol.swift; sourceTree = "<group>"; };
-		1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderTests.swift; sourceTree = "<group>"; };
 		1B43ED702F43F9AA00122AE3 /* AttractionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapper.swift; sourceTree = "<group>"; };
 		1B43ED732F43FD0B00122AE3 /* WishListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStore.swift; sourceTree = "<group>"; };
 		1B80F18A2F40A5F2009A1234 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +62,6 @@
 		1B80F1912F40A5F4009A1234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B80F1942F40A5F4009A1234 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B80F19A2F40A5F5009A1234 /* WishListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManagerTests.swift; sourceTree = "<group>"; };
 		1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingsResponse.swift; sourceTree = "<group>"; };
 		1B80F1B92F411BC5009A1234 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionCardView.swift; sourceTree = "<group>"; };
@@ -76,6 +76,10 @@
 		1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStoreProtocol.swift; sourceTree = "<group>"; };
 		1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperProtocol.swift; sourceTree = "<group>"; };
 		1BE345642F44A98E00E202CD /* offerings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = offerings.json; sourceTree = "<group>"; };
+		1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWishListViewModel.swift; sourceTree = "<group>"; };
+		1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWishListStore.swift; sourceTree = "<group>"; };
+		1BE345722F44F13400E202CD /* WishListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModelTests.swift; sourceTree = "<group>"; };
+		1BE345762F44F69000E202CD /* AttractionMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +126,7 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		1B43ED532F43D97F00122AE3 /* Protoccols */ = {
+		1B43ED532F43D97F00122AE3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */,
@@ -130,12 +134,14 @@
 				1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */,
 				1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */,
 			);
-			path = Protoccols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		1B43ED5B2F43E31D00122AE3 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */,
+				1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */,
 				1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */,
 			);
 			path = Mocks;
@@ -163,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				1B43ED5B2F43E31D00122AE3 /* Mocks */,
-				1B43ED532F43D97F00122AE3 /* Protoccols */,
+				1B43ED532F43D97F00122AE3 /* Protocols */,
 				1B43ED522F43D36500122AE3 /* Error */,
 				1B43ED4E2F43CDAE00122AE3 /* Mapper */,
 				1B80F1C82F411F96009A1234 /* Enums */,
@@ -188,8 +194,8 @@
 		1B80F19D2F40A5F5009A1234 /* WishListTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */,
-				1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */,
+				1BE345762F44F69000E202CD /* AttractionMapperTests.swift */,
+				1BE345722F44F13400E202CD /* WishListViewModelTests.swift */,
 			);
 			path = WishListTests;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */,
 				1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */,
 				1B80F1D42F412970009A1234 /* Attraction.swift in Sources */,
+				1BE3456F2F44EF7500E202CD /* MockWishListStore.swift in Sources */,
 				1B43ED512F43D36000122AE3 /* AppError.swift in Sources */,
 				1B80F1D22F412658009A1234 /* AttractionType.swift in Sources */,
 				1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */,
@@ -356,6 +363,7 @@
 				1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */,
 				1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */,
 				1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */,
+				1BE3456D2F44E40A00E202CD /* MockWishListViewModel.swift in Sources */,
 				1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */,
 				1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */,
 			);
@@ -365,8 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B80F19F2F40A5F5009A1234 /* WishListManagerTests.swift in Sources */,
-				1B43ED612F43F27A00122AE3 /* AttractionDataLoaderTests.swift in Sources */,
+				1BE345732F44F2CA00E202CD /* WishListViewModelTests.swift in Sources */,
+				1BE345772F44F69100E202CD /* AttractionMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +571,6 @@
 		1B80F1B22F40A5F5009A1234 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -583,7 +590,6 @@
 		1B80F1B32F40A5F5009A1234 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

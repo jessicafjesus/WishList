@@ -23,33 +23,24 @@ struct AttractionsListView: View {
         self.dataLoader = dataLoader
     }
     
-    // We could add more but it would appear in a filter type of way. Since here it's only 2, I'm going to show all of them
-    var attractionTypes: [AttractionType] {
-        let typeCounts = Dictionary(grouping: attractions, by: { $0.type })
-            .mapValues { $0.count }
-            .sorted { $0.value > $1.value }
-        
-        return typeCounts.prefix(2).map { $0.key }
-    }
-    
     var filteredAttractions: [Attraction] {
-        var result = attractions
-        
-        // Filter by type
+        let byType: [Attraction]
         if let selectedType = selectedType {
-            result = result.filter { $0.type == selectedType }
+            byType = attractions.filter { $0.type == selectedType }
+        } else {
+            byType = attractions
         }
-        
-        // Filter by search text
-        if !searchText.isEmpty {
-            result = result.filter { attraction in
-                attraction.name.localizedCaseInsensitiveContains(searchText) ||
-                attraction.description.localizedCaseInsensitiveContains(searchText) ||
-                attraction.type.rawValue.localizedCaseInsensitiveContains(searchText)
-            }
+
+        guard !searchText.isEmpty else { return byType }
+
+        let text = searchText
+        let bySearch = byType.filter { attraction in
+            let nameMatch = attraction.name.localizedCaseInsensitiveContains(text)
+            let descMatch = attraction.description.localizedCaseInsensitiveContains(text)
+            let typeMatch = attraction.type.rawValue.localizedCaseInsensitiveContains(text)
+            return nameMatch || descMatch || typeMatch
         }
-        
-        return result
+        return bySearch
     }
     
     var body: some View {
@@ -59,7 +50,7 @@ struct AttractionsListView: View {
                     statusBanner()
                     
                     HStack(spacing: 12) {
-                        ForEach(attractionTypes, id: \.self) { type in
+                        ForEach(attractionTypes(), id: \.self) { type in
                             filterChip(
                                 type: type,
                                 isSelected: selectedType == type,
@@ -102,6 +93,13 @@ struct AttractionsListView: View {
 
 // MARK: - Private Extensions
 private extension AttractionsListView {
+    // We could add more but it would appear in a filter type of way. Since here it's only 2, I'm going to show all of them
+    func attractionTypes() -> [AttractionType] {
+        let types = attractions.map { $0.type }
+        let unique = Set(types)
+        return unique.sorted { $0.rawValue < $1.rawValue }
+    }
+//    
     func loadAttractions() {
         let filename = "offerings"
         let items = dataLoader.loadAttractionsFromFile(named: filename, bundle: .main)

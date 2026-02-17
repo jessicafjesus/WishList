@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AttractionDetailView: View {
     let attraction: Attraction
-    let wishlistManager: WishListViewModel
+    let wishlistManager: WishListViewModelProtocol
     
-    init(attraction: Attraction, wishlistManager: WishListViewModel) {
+    init(attraction: Attraction, wishlistManager: WishListViewModelProtocol) {
         self.attraction = attraction
         self.wishlistManager = wishlistManager
     }
@@ -71,17 +71,6 @@ struct AttractionDetailView: View {
 }
 
 private extension AttractionDetailView {
-    func formatDate(_ dateString: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        
-        if let date = formatter.date(from: dateString) {
-            formatter.dateFormat = "MMM d, yyyy"
-            return formatter.string(from: date)
-        }
-        return dateString
-    }
-    
     @ViewBuilder
     func attractionInfo() -> some View {
         if attraction.type == .venue, let location = attraction.location {
@@ -121,7 +110,7 @@ private extension AttractionDetailView {
             HStack(spacing: 6) {
                 Image(systemName: "calendar")
                     .foregroundColor(.purple)
-                Text("\(formatDate(startDate)) - \(formatDate(endDate))")
+                Text("\(startDate) - \(endDate)")
                     .font(.subheadline)
                     .fontWeight(.medium)
             }

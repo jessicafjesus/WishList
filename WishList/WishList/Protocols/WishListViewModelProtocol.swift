@@ -1,5 +1,5 @@
 //
-//  WishListManagerProtocol.swift
+//  WishListViewModelProtocol.swift
 //  WishList
 //
 //  Created by Jessica Jesus on 17/02/2026.
