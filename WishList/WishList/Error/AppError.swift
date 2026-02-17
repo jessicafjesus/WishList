@@ -17,7 +17,7 @@ enum AppError: LocalizedError {
     case networkUnavailable
     case invalidData
     
-    var errorDescription: String {
+    var errorDescription: String? {
         switch self {
         case .fileNotFound(let filename):
             return "Could not find file: \(filename).json"

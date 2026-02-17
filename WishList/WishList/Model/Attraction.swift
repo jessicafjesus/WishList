@@ -41,7 +41,7 @@ struct Attraction: Codable, Identifiable {
         
         switch priceCurrency {
         case .eur:
-            return "\(String(format: "%.2f", price)) \(priceCurrency.rawValue) "
+            return "\(String(format: "%.2f", price)) \(priceCurrency.rawValue)"
         case .usd, .gbp:
             return "\(priceCurrency.rawValue) \(String(format: "%.2f", price))"
         }

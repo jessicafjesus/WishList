@@ -11,7 +11,7 @@ import SwiftUI
 struct WishListApp: App {
     var body: some Scene {
         WindowGroup {
-            AttractionsListView()
+            AttractionsListView(wishlistViewModel: WishListViewModel(), dataLoader: AttractionDataLoader())
         }
     }
 }

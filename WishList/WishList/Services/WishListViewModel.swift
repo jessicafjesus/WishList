@@ -8,23 +8,27 @@
 import Foundation
 import os
 
+@MainActor
 @Observable
-class WishListManager: WishListManagerProtocol {
-    // Singleton
-    static let shared = WishListManager()
-    
+class WishListViewModel: WishListViewModelProtocol {
     private(set) var wishlistItems: [Attraction] = []
     private(set) var error: AppError?
     
-    private let fileName = "wishlist.json"
     private let logger = Logger()
+    private let store: WishListStore
     
-    private var fileURL: URL {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        return documentsDirectory.appendingPathComponent(fileName)
-    }
-    
-    init() {
+    init(store: WishListStore? = nil, loadOnInit: Bool = true) {
+        if let store {
+            self.store = store
+        } else {
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            guard let documentsDirectory else {
+                fatalError("Could not get the documents directory.")
+            }
+            let fileURL = documentsDirectory.appendingPathComponent("wishlist.json")
+            self.store = WishListStore(fileURL: fileURL)
+        }
+        
         Task {
             await loadWishlist()
         }
@@ -66,60 +70,33 @@ class WishListManager: WishListManagerProtocol {
         }
     }
     
-    // In this case, I'm saving the information about the wish list in a json file, but this could be easily changed by an api call
-    func save(_ attractions: [Attraction]) async throws {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        
-        do {
-            let data = try encoder.encode(attractions)
-            try data.write(to: fileURL, options: [.atomic, .completeFileProtection])
-        } catch let error as EncodingError {
-            throw AppError.encodingFailed(error)
-        } catch {
-            throw AppError.fileOperationFailed(error)
-        }
-    }
-    
-    func load() async throws -> [Attraction] {
-        // File doesn't exist yet - return empty array (first launch)
-        guard FileManager.default.fileExists(atPath: fileURL.path) else {
-            return []
-        }
-        
-        let decoder = JSONDecoder()
-        
-        do {
-            let data = try Data(contentsOf: fileURL)
-            return try decoder.decode([Attraction].self, from: data)
-        } catch let error as DecodingError {
-            throw AppError.decodingFailed(error)
-        } catch {
-            throw AppError.fileOperationFailed(error)
-        }
-    }
-}
-
-private extension WishListManager {
     func loadWishlist() async {
         error = nil
         
         do {
-            let items = try await load()
+            let items = try await store.load()
             wishlistItems = items
             logger.info("Loaded \(items.count) items from wishlist")
         } catch {
-            self.error = AppError.fileOperationFailed(error)
+            if let appError = error as? AppError {
+                self.error = appError
+            } else {
+                self.error = AppError.fileOperationFailed(error)
+            }
             logger.info("Failed to load wishlist: \(error.localizedDescription)")
         }
     }
     
     func saveWishlist() async {
         do {
-            try await save(wishlistItems)
+            try await store.save(wishlistItems)
             logger.debug("Saved \(self.wishlistItems.count) items to wishlist")
         } catch {
-            self.error = AppError.fileOperationFailed(error)
+            if let appError = error as? AppError {
+                self.error = appError
+            } else {
+                self.error = AppError.fileOperationFailed(error)
+            }
             logger.info("Failed to save wishlist: \(error.localizedDescription)")
         }
     }

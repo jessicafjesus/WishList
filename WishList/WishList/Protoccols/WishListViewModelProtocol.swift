@@ -8,7 +8,8 @@
 import Foundation
 
 /// Protocol defining wishlist management operations
-protocol WishListManagerProtocol {
+@MainActor
+protocol WishListViewModelProtocol {
     /// The current items in the wishlist
     var wishlistItems: [Attraction] { get }
     
@@ -31,12 +32,4 @@ protocol WishListManagerProtocol {
     /// Removes an attraction from the wishlist
     /// - Parameter attraction: The attraction to remove
     func removeFromWishlist(_ attraction: Attraction)
-    
-    /// Saves attractions to persistent storage
-    /// - Parameter attractions: The attractions to save
-    func save(_ attractions: [Attraction]) async throws
-    
-    /// Loads attractions from persistent storage
-    /// - Returns: Array of saved attractions
-    func load() async throws -> [Attraction]
 }

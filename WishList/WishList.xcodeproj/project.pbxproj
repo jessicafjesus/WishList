@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */; };
-		1B43ED4D2F43CC2400122AE3 /* AttractionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED4C2F43CC2400122AE3 /* AttractionMapper.swift */; };
 		1B43ED512F43D36000122AE3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED502F43D36000122AE3 /* AppError.swift */; };
-		1B43ED552F43D99100122AE3 /* WishListManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */; };
+		1B43ED552F43D99100122AE3 /* WishListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */; };
 		1B43ED5D2F43E32C00122AE3 /* MockAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */; };
 		1B43ED5F2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */; };
 		1B43ED612F43F27A00122AE3 /* AttractionDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */; };
-		1B43ED632F43F2C800122AE3 /* AttractionMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */; };
+		1B43ED712F43F9AA00122AE3 /* AttractionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED702F43F9AA00122AE3 /* AttractionMapper.swift */; };
+		1B43ED742F43FD0B00122AE3 /* WishListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B43ED732F43FD0B00122AE3 /* WishListStore.swift */; };
 		1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18D2F40A5F2009A1234 /* WishListApp.swift */; };
 		1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F18F2F40A5F2009A1234 /* WishListView.swift */; };
 		1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1912F40A5F4009A1234 /* Assets.xcassets */; };
 		1B80F1952F40A5F4009A1234 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1942F40A5F4009A1234 /* Preview Assets.xcassets */; };
 		1B80F19F2F40A5F5009A1234 /* WishListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */; };
 		1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */; };
-		1B80F1BA2F411BC6009A1234 /* WishListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B92F411BC5009A1234 /* WishListManager.swift */; };
+		1B80F1BA2F411BC6009A1234 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1B92F411BC5009A1234 /* WishListViewModel.swift */; };
 		1B80F1BC2F411BE5009A1234 /* AttractionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */; };
 		1B80F1BE2F411C18009A1234 /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */; };
 		1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1C12F411D44009A1234 /* AttractionsListView.swift */; };
-		1B80F1C62F411E84009A1234 /* offerings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B80F1C52F411E84009A1234 /* offerings.json */; };
 		1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */; };
 		1B80F1D02F4122FE009A1234 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1CF2F4122FE009A1234 /* Currency.swift */; };
 		1B80F1D22F412658009A1234 /* AttractionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D12F412658009A1234 /* AttractionType.swift */; };
 		1B80F1D42F412970009A1234 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D32F412970009A1234 /* Attraction.swift */; };
 		1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */; };
 		1B80F1D82F41441E009A1234 /* WishListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80F1D72F41441E009A1234 /* WishListCardView.swift */; };
+		1BE345592F4484AA00E202CD /* WishListStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */; };
+		1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */; };
+		1BE345652F44A98E00E202CD /* offerings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE345642F44A98E00E202CD /* offerings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +48,13 @@
 
 /* Begin PBXFileReference section */
 		1B43ED4A2F43B41500122AE3 /* AttractionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionImageView.swift; sourceTree = "<group>"; };
-		1B43ED4C2F43CC2400122AE3 /* AttractionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapper.swift; sourceTree = "<group>"; };
 		1B43ED502F43D36000122AE3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManagerProtocol.swift; sourceTree = "<group>"; };
+		1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModelProtocol.swift; sourceTree = "<group>"; };
 		1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAttraction.swift; sourceTree = "<group>"; };
 		1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderProtocol.swift; sourceTree = "<group>"; };
 		1B43ED602F43F27A00122AE3 /* AttractionDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoaderTests.swift; sourceTree = "<group>"; };
-		1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperProtocol.swift; sourceTree = "<group>"; };
+		1B43ED702F43F9AA00122AE3 /* AttractionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapper.swift; sourceTree = "<group>"; };
+		1B43ED732F43FD0B00122AE3 /* WishListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStore.swift; sourceTree = "<group>"; };
 		1B80F18A2F40A5F2009A1234 /* WishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F18D2F40A5F2009A1234 /* WishListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListApp.swift; sourceTree = "<group>"; };
 		1B80F18F2F40A5F2009A1234 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
@@ -61,17 +63,19 @@
 		1B80F19A2F40A5F5009A1234 /* WishListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B80F19E2F40A5F5009A1234 /* WishListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManagerTests.swift; sourceTree = "<group>"; };
 		1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferingsResponse.swift; sourceTree = "<group>"; };
-		1B80F1B92F411BC5009A1234 /* WishListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManager.swift; sourceTree = "<group>"; };
+		1B80F1B92F411BC5009A1234 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		1B80F1BB2F411BE5009A1234 /* AttractionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionCardView.swift; sourceTree = "<group>"; };
 		1B80F1BD2F411C18009A1234 /* AttractionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
 		1B80F1C12F411D44009A1234 /* AttractionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsListView.swift; sourceTree = "<group>"; };
-		1B80F1C52F411E84009A1234 /* offerings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = offerings.json; path = ../../../../../../Downloads/offerings.json; sourceTree = "<group>"; };
 		1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDataLoader.swift; sourceTree = "<group>"; };
 		1B80F1CF2F4122FE009A1234 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		1B80F1D12F412658009A1234 /* AttractionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionType.swift; sourceTree = "<group>"; };
 		1B80F1D32F412970009A1234 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		1B80F1D52F4143AF009A1234 /* EmptyWishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWishListView.swift; sourceTree = "<group>"; };
 		1B80F1D72F41441E009A1234 /* WishListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCardView.swift; sourceTree = "<group>"; };
+		1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStoreProtocol.swift; sourceTree = "<group>"; };
+		1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperProtocol.swift; sourceTree = "<group>"; };
+		1BE345642F44A98E00E202CD /* offerings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = offerings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,7 @@
 		1B43ED4E2F43CDAE00122AE3 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				1B43ED4C2F43CC2400122AE3 /* AttractionMapper.swift */,
+				1B43ED702F43F9AA00122AE3 /* AttractionMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -121,9 +125,10 @@
 		1B43ED532F43D97F00122AE3 /* Protoccols */ = {
 			isa = PBXGroup;
 			children = (
-				1B43ED542F43D99100122AE3 /* WishListManagerProtocol.swift */,
+				1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */,
+				1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */,
+				1B43ED542F43D99100122AE3 /* WishListViewModelProtocol.swift */,
 				1B43ED5E2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift */,
-				1B43ED622F43F2C800122AE3 /* AttractionMapperProtocol.swift */,
 			);
 			path = Protoccols;
 			sourceTree = "<group>";
@@ -204,7 +209,7 @@
 		1B80F1C42F411E62009A1234 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1B80F1C52F411E84009A1234 /* offerings.json */,
+				1BE345642F44A98E00E202CD /* offerings.json */,
 				1B80F1B72F411B5B009A1234 /* OfferingsResponse.swift */,
 				1B80F1D32F412970009A1234 /* Attraction.swift */,
 			);
@@ -214,8 +219,9 @@
 		1B80F1C72F411E9D009A1234 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1B80F1B92F411BC5009A1234 /* WishListManager.swift */,
+				1B80F1B92F411BC5009A1234 /* WishListViewModel.swift */,
 				1B80F1CD2F41204A009A1234 /* AttractionDataLoader.swift */,
+				1B43ED732F43FD0B00122AE3 /* WishListStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -310,7 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B80F1C62F411E84009A1234 /* offerings.json in Resources */,
+				1BE345652F44A98E00E202CD /* offerings.json in Resources */,
 				1B80F1952F40A5F4009A1234 /* Preview Assets.xcassets in Resources */,
 				1B80F1922F40A5F4009A1234 /* Assets.xcassets in Resources */,
 			);
@@ -331,21 +337,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B43ED5D2F43E32C00122AE3 /* MockAttraction.swift in Sources */,
-				1B43ED632F43F2C800122AE3 /* AttractionMapperProtocol.swift in Sources */,
+				1B43ED742F43FD0B00122AE3 /* WishListStore.swift in Sources */,
+				1B43ED712F43F9AA00122AE3 /* AttractionMapper.swift in Sources */,
 				1B80F1BE2F411C18009A1234 /* AttractionDetailView.swift in Sources */,
 				1B43ED5F2F43F1C400122AE3 /* AttractionDataLoaderProtocol.swift in Sources */,
 				1B80F1902F40A5F2009A1234 /* WishListView.swift in Sources */,
 				1B80F1CE2F41204A009A1234 /* AttractionDataLoader.swift in Sources */,
 				1B80F1D42F412970009A1234 /* Attraction.swift in Sources */,
 				1B43ED512F43D36000122AE3 /* AppError.swift in Sources */,
-				1B43ED4D2F43CC2400122AE3 /* AttractionMapper.swift in Sources */,
 				1B80F1D22F412658009A1234 /* AttractionType.swift in Sources */,
 				1B80F1B82F411B5B009A1234 /* OfferingsResponse.swift in Sources */,
 				1B80F1BC2F411BE5009A1234 /* AttractionCardView.swift in Sources */,
-				1B43ED552F43D99100122AE3 /* WishListManagerProtocol.swift in Sources */,
+				1B43ED552F43D99100122AE3 /* WishListViewModelProtocol.swift in Sources */,
+				1BE345592F4484AA00E202CD /* WishListStoreProtocol.swift in Sources */,
 				1B80F1D82F41441E009A1234 /* WishListCardView.swift in Sources */,
 				1B80F1D02F4122FE009A1234 /* Currency.swift in Sources */,
-				1B80F1BA2F411BC6009A1234 /* WishListManager.swift in Sources */,
+				1B80F1BA2F411BC6009A1234 /* WishListViewModel.swift in Sources */,
+				1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */,
 				1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */,
 				1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */,
 				1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */,
@@ -433,6 +441,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -488,6 +497,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -516,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jessicajesus.WishList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,7 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jessicajesus.WishList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

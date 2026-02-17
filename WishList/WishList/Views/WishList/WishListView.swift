@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct WishListView: View {
-    private var wishlistManager: WishListManager
+    @Bindable private var wishlistManager: WishListViewModel
     @State private var selectedAttraction: Attraction?
     
-    init(wishlistManager: WishListManager) {
+    init(wishlistManager: WishListViewModel) {
         self.wishlistManager = wishlistManager
     }
     
     var body: some View {
         Group {
             if wishlistManager.wishlistItems.isEmpty {
-                EmptyWishListView()
+                VStack(spacing: 12) {
+                    if let wishlistError = wishlistManager.error {
+                        Text(wishlistError.errorDescription ?? "Unknown error")
+                            .font(.footnote)
+                            .foregroundColor(.red)
+                            .padding(.horizontal)
+                    }
+                    EmptyWishListView()
+                }
             } else {
                 ScrollView {
                     VStack(spacing: 16) {
+                        if let wishlistError = wishlistManager.error {
+                            Text(wishlistError.errorDescription ?? "Unknown error")
+                                .font(.footnote)
+                                .foregroundColor(.red)
+                                .padding(.horizontal)
+                        }
                         VStack(spacing: 12) {
                             Image(systemName: "heart.circle.fill")
                                 .font(.system(size: 50))
@@ -83,7 +97,7 @@ struct WishListView: View {
 struct WishlistView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WishListView(wishlistManager: WishListManager())
+            WishListView(wishlistManager: WishListViewModel())
         }
     }
 }

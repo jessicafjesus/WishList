@@ -9,7 +9,12 @@ import SwiftUI
 
 struct AttractionDetailView: View {
     let attraction: Attraction
-    var wishlistManager: WishListManager
+    let wishlistManager: WishListViewModel
+    
+    init(attraction: Attraction, wishlistManager: WishListViewModel) {
+        self.attraction = attraction
+        self.wishlistManager = wishlistManager
+    }
     
     var isInWishlist: Bool {
         wishlistManager.isInWishlist(attraction)
@@ -156,7 +161,7 @@ struct AttractionDetailView_Previews: PreviewProvider {
         NavigationView {
             AttractionDetailView(
                 attraction: sampleAttraction,
-                wishlistManager: WishListManager()
+                wishlistManager: WishListViewModel()
             )
         }
     }

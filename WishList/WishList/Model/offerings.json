@@ -1,0 +1,151 @@
+{
+	"items": [
+		{
+			"type": "VENUE",
+			"id": "123",
+			"name": "Van Gogh Museum",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/9d3735fc2e334bc3a3b68822a2e801b4.jpg?w=315&h=210&dpr=2&q=40&fit=crop",
+			"price_currency_code": "EUR",
+			"price": "10.00",
+			"stars_rating": 4.8
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "321",
+			"name": "Erratic Growth",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/7fc58eaa938444d3963660eed00b3ce0.jpg?auto=format&dpr=2&fit=crop&h=200&ixlib=python-3.2.1&q=25&w=300&s=6efcc07eb8bdd167894165e382662eb4",
+			"price_currency_code": "EUR",
+			"price": "4.50",
+			"location": "Van Gogh Museum",
+			"start_date": "2025-02-01",
+			"end_date": "2025-06-30"
+		},
+		{
+			"type": "VENUE",
+			"id": "45678",
+			"name": "Moco Museum",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/770f93d18e1544728550c132f46b3f86.jpg?auto=format&fit=crop&h=275&ixlib=python-3.2.1&q=70&w=275&s=137d1f6c19d580c9958508b0ca26384e",
+			"price_currency_code": "EUR",
+			"price": "19.50",
+			"stars_rating": 4.82
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "234",
+			"name": "Surinamese School: Painting from Paramaribo to Amsterdam",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/e46a8106542c4a988f9cb9255428590c.jpg?auto=format&fit=crop&h=360&ixlib=python-3.2.1&q=70&w=auto&s=c047ff3d57f2eaf1b7186e0a0501aae1",
+			"price_currency_code": "EUR",
+			"price": "7.01",
+			"location": "Stedelijk Museum Amsterdam",
+			"start_date": "2025-06-15",
+			"end_date": "2025-08-15"
+		},
+		{
+			"type": "VENUE",
+			"id": "555",
+			"name": "Canal Cruise Amsterdam",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/17b373e031d64b83a6571821f5395b5b.jpg?auto=format&fit=crop&ixlib=python-3.2.1&q=25&s=26af1feab5fc4bd207b1c56ff73f67f4&w=330&h=330&dpr=2",
+			"price_currency_code": "EUR",
+			"price": "14.99",
+			"stars_rating": 3.74
+		},
+		{
+			"type": "VENUE",
+			"id": "543",
+			"name": "Tickets for Amsterdam By Night Cruise",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/d19f633f6d8c445688610d3f3d645ae3.jpg?auto=format&fit=crop&ixlib=python-3.2.1&q=25&s=d6c05e569ac580873ab7e4c9c03e2c62&w=330&h=330&dpr=2",
+			"price_currency_code": "EUR",
+			"price": "13.00",
+			"stars_rating": 4.32
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "789",
+			"name": "Slavery",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/fd3d34467f1140f99a58817f77545fbe.jpg?auto=format&fit=crop&h=360&ixlib=python-3.2.1&q=70&w=auto&s=b0394e2eb17bfd3db8d1122233ae5f6b",
+			"price_currency_code": "EUR",
+			"price": "7.01",
+			"location": "Rijksmuseum",
+			"start_date": "2025-02-12",
+			"end_date": "2025-06-30"
+		},
+		{
+			"type": "VENUE",
+			"id": "8888",
+			"name": "ARTIS Amsterdam Royal Zoo",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/1e646cfef70946ecb5f99bbdd36bda96.jpg?auto=format&dpr=2&fit=crop&h=210&ixlib=python-3.2.1&q=40&w=315&s=67f16ba630e198e73e025c8dbef78002",
+			"price_currency_code": "EUR",
+			"price": "25.00",
+			"stars_rating": 4.8
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "333",
+			"name": "Bruce Nauman",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/75ef710b67cc43d583ad6d26f951e05e.jfif?auto=format&fit=crop&h=360&ixlib=python-3.2.1&q=70&w=auto&s=4bfbbadc5260b8117d815cc72ecd0c84",
+			"price_currency_code": "EUR",
+			"price": "23.00",
+			"location": "Stedelijk Museum Amsterdam",
+			"start_date": "2025-03-27",
+			"end_date": "2025-08-15"
+		},
+		{
+			"type": "VENUE",
+			"id": "999",
+			"name": "Stedelijk Museum Amsterdam",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/4b6536d7a4f347b89a1b9e810e5a48a2.jpg?auto=format&dpr=2&fit=crop&h=210&ixlib=python-3.2.1&q=40&w=315&s=d5171ff824c1e69d00599e69ffe60ce7",
+			"price_currency_code": "EUR",
+			"price": "23.00",
+			"stars_rating": 4.69
+		},
+		{
+			"type": "VENUE",
+			"id": "007",
+			"name": "Windmill Cruise Through Zaanse Schans",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/b11bbdfcdd424881bc9c6c0f2d427f8e.jpg?auto=format&dpr=2&fit=crop&h=210&ixlib=python-3.2.1&q=40&w=315&s=f0fcc8aaffacb6c478c01f2a801fe77c",
+			"price_currency_code": "EUR",
+			"price": "14.00",
+			"stars_rating": 4.675
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "a123",
+			"name": "Humania",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/85e826c62c1043e8878b19b799f45888.jpg?auto=format&fit=crop&h=360&ixlib=python-3.2.1&q=70&w=auto&s=a3b07d3132b88a0dbb6e4f16d955f77e",
+			"price_currency_code": "EUR",
+			"price": "17.50",
+			"location": "Science Center NEMO",
+			"start_date": "2025-02-24",
+			"end_date": "2025-12-01"
+		},
+		{
+			"type": "VENUE",
+			"id": "006",
+			"name": "Historic Boat Tour",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/7a5912871bcd46979bcce66a2d40aadc.jpg?auto=format&dpr=2&fit=crop&h=210&ixlib=python-3.2.1&q=40&w=315&s=57a9bf1c190223b2e6f7e661d9a28422",
+			"price_currency_code": "EUR",
+			"price": "37.50",
+			"stars_rating": 4.899999
+		},
+		{
+			"type": "VENUE",
+			"id": "001",
+			"name": "Volendam & Windmills Tour",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/019a46fcbe354ceba687c12e75563542.jpg?w=315&h=210&dpr=2&q=40&fit=crop",
+			"price_currency_code": "EUR",
+			"price": "29.00",
+			"stars_rating": 4.6
+		},
+		{
+			"type": "EXHIBITION",
+			"id": "123",
+			"name": "The Second World War in 100 Photos",
+			"image": "https://aws-tiqets-cdn.imgix.net/images/content/172b5283233842b581a0c2ff8f1ddfd2.png?auto=format&fit=crop&h=360&ixlib=python-3.2.1&q=70&w=auto&s=028b1ead2ef72c4670e7d0c8bd89cc82",
+			"price_currency_code": "EUR",
+			"price": "7.01",
+			"location": "Dutch Resistance Museum",
+			"start_date": "2024-09-17",
+			"end_date": "2025-12-31"
+		}
+	]
+}

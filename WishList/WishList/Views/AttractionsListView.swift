@@ -7,12 +7,21 @@
 
 import SwiftUI
 
+@MainActor
 struct AttractionsListView: View {
-    @State private var wishlistManager = WishListManager()
     @State private var searchText = ""
     @State private var selectedType: AttractionType?
+    @State private var loadError: AppError? = nil
+    @State private var isLoading = true
+    @State private var attractions: [Attraction] = []
     
-    let attractions: [Attraction] = AttractionDataLoader().loadAttractionsFromFile(named: "offerings")
+    private let wishlistViewModel: WishListViewModel
+    private let dataLoader: any AttractionDataLoaderProtocol
+    
+    init(wishlistViewModel: WishListViewModel, dataLoader: AttractionDataLoaderProtocol) {
+        self.wishlistViewModel = wishlistViewModel
+        self.dataLoader = dataLoader
+    }
     
     // We could add more but it would appear in a filter type of way. Since here it's only 2, I'm going to show all of them
     var attractionTypes: [AttractionType] {
@@ -47,6 +56,8 @@ struct AttractionsListView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
+                    statusBanner()
+                    
                     HStack(spacing: 12) {
                         ForEach(attractionTypes, id: \.self) { type in
                             filterChip(
@@ -72,10 +83,10 @@ struct AttractionsListView: View {
                 .padding(.bottom, 20)
             }
             .navigationTitle("Explore")
-            .searchable(text: $searchText, prompt: "Search attractions")
+            .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search attractions")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: WishListView(wishlistManager: wishlistManager)) {
+                    NavigationLink(destination: WishListView(wishlistManager: wishlistViewModel)) {
                         Image(systemName: "heart.circle.fill")
                             .font(.title3)
                             .foregroundColor(.red)
@@ -83,11 +94,51 @@ struct AttractionsListView: View {
                 }
             }
         }
+        .onAppear {
+            loadAttractions()
+        }
     }
 }
 
 // MARK: - Private Extensions
 private extension AttractionsListView {
+    func loadAttractions() {
+        let filename = "offerings"
+        let items = dataLoader.loadAttractionsFromFile(named: filename, bundle: .main)
+        guard let items else {
+            self.loadError = .fileFailedToLoad(filename)
+            return
+        }
+        
+        attractions = items
+        isLoading = false
+    }
+    
+    @ViewBuilder
+    func statusBanner() -> some View {
+        if isLoading {
+            HStack(spacing: 8) {
+                ProgressView()
+                Text("Loading attractions...")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+        } else if let loadError {
+            Text(loadError.errorDescription ?? "Unknown error")
+                .font(.footnote)
+                .foregroundColor(.red)
+                .padding(.horizontal)
+        }
+        
+        if let wishlistError = wishlistViewModel.error {
+            Text(wishlistError.errorDescription ?? "Unknown error")
+                .font(.footnote)
+                .foregroundColor(.red)
+                .padding(.horizontal)
+        }
+    }
+    
     func filterChip(type: AttractionType, isSelected: Bool, onTap: @escaping () -> Void) -> some View {
         Button(action: onTap) {
             HStack(spacing: 6) {
@@ -110,14 +161,14 @@ private extension AttractionsListView {
             ForEach(filteredAttractions) { attraction in
                 NavigationLink(destination: AttractionDetailView(
                     attraction: attraction,
-                    wishlistManager: wishlistManager
+                    wishlistManager: wishlistViewModel
                 )) {
                     AttractionCardView(
                         attraction: attraction,
-                        isInWishlist: wishlistManager.isInWishlist(attraction),
+                        isInWishlist: wishlistViewModel.isInWishlist(attraction),
                         onToggleWishlist: {
                             withAnimation(.spring(response: 0.3)) {
-                                wishlistManager.toggleWishlist(attraction)
+                                wishlistViewModel.toggleWishlist(attraction)
                             }
                         }
                     )
@@ -131,6 +182,7 @@ private extension AttractionsListView {
 
 struct AttractionsListView_Previews: PreviewProvider {
     static var previews: some View {
-        AttractionsListView()
+        AttractionsListView(wishlistViewModel: WishListViewModel(), dataLoader: AttractionDataLoader())
     }
 }
+
