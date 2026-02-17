@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WishListView: View {
     private var wishlistViewModel: WishListViewModelProtocol
-    @State private var selectedAttraction: Attraction?
     
     init(wishlistViewModel: WishListViewModelProtocol) {
         self.wishlistViewModel = wishlistViewModel
@@ -66,9 +65,6 @@ struct WishListView: View {
         .background(Color.gray.opacity(0.05))
         .navigationTitle("Wishlist")
         .navigationBarTitleDisplayMode(.inline)
-        .navigationDestination(item: $selectedAttraction) { attraction in
-            AttractionDetailView(attraction: attraction, wishlistViewModel: wishlistViewModel)
-        }
     }
     
     func makeWishCards() -> some View {

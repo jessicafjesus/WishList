@@ -34,8 +34,8 @@ protocol WishListViewModelProtocol {
     func removeFromWishlist(_ attraction: Attraction)
     
     /// Loads the wishlist from persistence into memory.
-    func loadWishlist() async
+    func loadWishlist()
     
     /// Persists the current in-memory wishlist to storage.
-    func saveWishlist() async
+    func saveWishlist()
 }

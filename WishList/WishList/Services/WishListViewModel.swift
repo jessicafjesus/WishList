@@ -29,9 +29,7 @@ class WishListViewModel: WishListViewModelProtocol {
             self.store = WishListStore(fileURL: fileURL)
         }
         
-        Task {
-            await loadWishlist()
-        }
+        loadWishlist()
     }
     
     func isInWishlist(_ attraction: Attraction) -> Bool {
@@ -47,56 +45,42 @@ class WishListViewModel: WishListViewModelProtocol {
         } else {
             wishlistItems.append(attraction)
         }
-        Task {
-            await saveWishlist()
-        }
+        saveWishlist()
     }
     
     func addToWishlist(_ attraction: Attraction) {
         if !isInWishlist(attraction) {
             wishlistItems.append(attraction)
-            Task {
-                await saveWishlist()
-            }
+            saveWishlist()
         }
     }
     
     func removeFromWishlist(_ attraction: Attraction) {
         if let index = wishlistItems.firstIndex(where: { $0.id == attraction.id }) {
             wishlistItems.remove(at: index)
-            Task {
-                await saveWishlist()
-            }
+            saveWishlist()
         }
     }
     
-    func loadWishlist() async {
+    func loadWishlist() {
         error = nil
         
         do {
-            let items = try await store.load()
+            let items = try store.load()
             wishlistItems = items
             logger.info("Loaded \(items.count) items from wishlist")
         } catch {
-            if let appError = error as? AppError {
-                self.error = appError
-            } else {
-                self.error = AppError.fileOperationFailed(error)
-            }
+            self.error = (error as? AppError) ?? AppError.fileOperationFailed(error)
             logger.info("Failed to load wishlist: \(error.localizedDescription)")
         }
     }
     
-    func saveWishlist() async {
+    func saveWishlist() {
         do {
-            try await store.save(wishlistItems)
+            try store.save(wishlistItems)
             logger.debug("Saved \(self.wishlistItems.count) items to wishlist")
         } catch {
-            if let appError = error as? AppError {
-                self.error = appError
-            } else {
-                self.error = AppError.fileOperationFailed(error)
-            }
+            self.error = (error as? AppError) ?? AppError.fileOperationFailed(error)
             logger.info("Failed to save wishlist: \(error.localizedDescription)")
         }
     }

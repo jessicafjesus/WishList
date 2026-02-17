@@ -32,7 +32,6 @@
 		1BE345592F4484AA00E202CD /* WishListStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */; };
 		1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */; };
 		1BE345652F44A98E00E202CD /* offerings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE345642F44A98E00E202CD /* offerings.json */; };
-		1BE3456D2F44E40A00E202CD /* MockWishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */; };
 		1BE3456F2F44EF7500E202CD /* MockWishListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */; };
 		1BE345732F44F2CA00E202CD /* WishListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345722F44F13400E202CD /* WishListViewModelTests.swift */; };
 		1BE345772F44F69100E202CD /* AttractionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE345762F44F69000E202CD /* AttractionMapperTests.swift */; };
@@ -76,7 +75,6 @@
 		1BE345582F4484A100E202CD /* WishListStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStoreProtocol.swift; sourceTree = "<group>"; };
 		1BE345602F44A48200E202CD /* AttractionMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperProtocol.swift; sourceTree = "<group>"; };
 		1BE345642F44A98E00E202CD /* offerings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = offerings.json; sourceTree = "<group>"; };
-		1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWishListViewModel.swift; sourceTree = "<group>"; };
 		1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWishListStore.swift; sourceTree = "<group>"; };
 		1BE345722F44F13400E202CD /* WishListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModelTests.swift; sourceTree = "<group>"; };
 		1BE345762F44F69000E202CD /* AttractionMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMapperTests.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				1BE3456E2F44EF7500E202CD /* MockWishListStore.swift */,
-				1BE3456C2F44E40A00E202CD /* MockWishListViewModel.swift */,
 				1B43ED5C2F43E32C00122AE3 /* MockAttraction.swift */,
 			);
 			path = Mocks;
@@ -363,7 +360,6 @@
 				1BE345612F44A48200E202CD /* AttractionMapperProtocol.swift in Sources */,
 				1B80F18E2F40A5F2009A1234 /* WishListApp.swift in Sources */,
 				1B80F1C22F411D44009A1234 /* AttractionsListView.swift in Sources */,
-				1BE3456D2F44E40A00E202CD /* MockWishListViewModel.swift in Sources */,
 				1B43ED4B2F43B41500122AE3 /* AttractionImageView.swift in Sources */,
 				1B80F1D62F4143AF009A1234 /* EmptyWishListView.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 import Foundation
 
 struct MockAttraction {
-    func makeVenueAttraction(price: Double? = nil, currency: Currency = .eur) -> Attraction {
+    func makeVenueAttraction() -> Attraction {
         Attraction(
             id: "id1",
             name: "Van Gogh Museum",
