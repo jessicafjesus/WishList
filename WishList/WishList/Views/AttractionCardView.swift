@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct AttractionCardView: View {
-    let attraction: Attraction
-    let isInWishlist: Bool
-    let onToggleWishlist: () -> Void
+    private let attraction: Attraction
+    private let isInWishlist: Bool
+    private let onToggleWishlist: () -> Void
+    
+    init(attraction: Attraction, isInWishlist: Bool, onToggleWishlist: @escaping () -> Void) {
+        self.attraction = attraction
+        self.isInWishlist = isInWishlist
+        self.onToggleWishlist = onToggleWishlist
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

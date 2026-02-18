@@ -42,3 +42,4 @@ Attractions come from offerings.json bundled with the app. Each item is either a
 
 - Images are fetched remotely via `AsyncImage`. No internet just means a placeholder icon — the rest of the app works fine since attraction data is local.
 - Wishlist data lives in the app's documents directory as `wishlist.json`.
+- I also didn't add localisables, but in a normal app, it would have them.

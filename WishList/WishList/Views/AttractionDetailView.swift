@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AttractionDetailView: View {
-    let attraction: Attraction
-    let wishlistViewModel: WishListViewModelProtocol
+    private let attraction: Attraction
+    private let wishlistViewModel: WishListViewModelProtocol
     
     init(attraction: Attraction, wishlistViewModel: WishListViewModelProtocol) {
         self.attraction = attraction

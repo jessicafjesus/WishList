@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct WishListCardView: View {
-    let attraction: Attraction
-    let onRemove: () -> Void
+    private let attraction: Attraction
+    private let onRemove: () -> Void
+
+    init(attraction: Attraction, onRemove: @escaping () -> Void) {
+        self.attraction = attraction
+        self.onRemove = onRemove
+    }
     
     var body: some View {
         HStack(spacing: 16) {
